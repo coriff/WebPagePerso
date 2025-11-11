@@ -1,81 +1,16 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Constantin Riff</title>
   <meta name="description" content="Site personnel de Constantin Riff – parcours, projets, contact" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --panel: #11131a;
-      --text: #e7e9ee;
-      --muted: #9aa3b2;
-      --accent: #7cc0ff;
-      --link: #9fd4ff;
-      --border: #1c2030;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 14px;
-      --maxw: 900px;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.6;
-      color: var(--text);
-      background: radial-gradient(1200px 800px at 10% -10%, rgba(124,192,255,.12), transparent 60%),
-                  radial-gradient(800px 600px at 100% 0%, rgba(124,255,210,.08), transparent 60%),
-                  var(--bg);
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: var(--maxw); padding: 32px 20px 80px; margin: 0 auto; }
-
-    header.profile { display: grid; grid-template-columns: 96px 1fr; grid-gap: 20px; align-items: center; margin-top: 32px; }
-    .avatar { width: 96px; height: 96px; border-radius: 50%; background: #222; border: 1px solid var(--border); box-shadow: var(--shadow); object-fit: cover; }
-    h1 { font-size: 32px; margin: 0 0 6px; letter-spacing: -0.3px; }
-    .tagline { color: var(--muted); margin: 2px 0 2px; }
-    .links { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 8px; }
-    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,0.02); }
-    .pill svg { width: 16px; height: 16px; opacity: .9; }
-
-    section { margin-top: 32px; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
-    section > header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--border); }
-    section > header h2 { margin: 0; font-size: 18px; letter-spacing: .2px; text-transform: uppercase; color: var(--muted); }
-    .content { padding: 18px; }
-
-    /* News */
-    .news-list { list-style: none; margin: 0; padding: 0; }
-    .news-item { padding: 10px 0; border-bottom: 1px dashed var(--border); }
-    .news-item:last-child { border-bottom: none; }
-    .news-date { font-variant-numeric: tabular-nums; color: var(--muted); margin-right: 10px; }
-    .toggle { appearance: none; border: 1px solid var(--border); background: transparent; color: var(--text); border-radius: 10px; padding: 6px 10px; cursor: pointer; }
-
-    .news-collapsed .news-item[data-idx="4"],
-    .news-collapsed .news-item[data-idx="5"],
-    .news-collapsed .news-item[data-idx="6"],
-    .news-collapsed .news-item[data-idx="7"],
-    .news-collapsed .news-item[data-idx="8"],
-    .news-collapsed .news-item[data-idx="9"] { display: none; }
-
-    /* Work / Publications */
-    .pub { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 12px 0; border-bottom: 1px dashed var(--border); }
-    .pub:last-child { border-bottom: none; }
-    .pub-title { font-weight: 600; }
-    .pub-meta { color: var(--muted); font-size: 14px; }
-    .pub-links { display: flex; flex-wrap: wrap; gap: 10px; font-size: 14px; }
-
-    /* Footer */
-    footer { text-align: center; color: var(--muted); padding: 28px 0 0; font-size: 14px; }
-
-    @media (min-width: 680px) {
-      h1 { font-size: 38px; }
-    }
-  </style>
+  
 </head>
 <body>
   <div class="wrap">
@@ -83,7 +18,7 @@
     <!-- Header / Profile -->
     <header class="profile">
       <!-- Remplacez src par votre photo si vous le souhaitez -->
-      <img class="avatar" src="assets/profile.jpg" alt="Portrait de Constantin Riff" />
+      <img class="avatar" src="forum_epfl_carré.jpg" alt="Portrait de Constantin Riff" />
       <div>
         <h1>Constantin Riff</h1>
         <p class="tagline">Étudiant / Ingénieur – EPFL → ETHZ. Intéressé par <em>xxx</em> (à préciser).</p>
@@ -179,28 +114,7 @@
 
   </div>
 
-  <script>
-    // Année dynamique
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // News: show more / less
-    const news = document.getElementById('news');
-    const toggle = document.getElementById('newsToggle');
-    const updateToggle = () => {
-      const collapsed = news.classList.contains('news-collapsed');
-      toggle.textContent = collapsed ? '↓ Voir plus' : '↑ Masquer';
-      toggle.setAttribute('aria-expanded', String(!collapsed));
-    };
-    toggle.addEventListener('click', () => {
-      news.classList.toggle('news-collapsed');
-      updateToggle();
-    });
-    updateToggle();
-
-    // Petit helper : liens externes sécurisés
-    document.querySelectorAll('a[target="_blank"]').forEach(a => {
-      if (!a.rel.includes('noopener')) a.rel += ' noopener';
-    });
-  </script>
+  
+  <script src="script.js" defer></script>
 </body>
 </html>

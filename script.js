@@ -100,7 +100,7 @@ document.querySelectorAll('[data-protected="scholar"]').forEach(el => {
     openModal({
       hash: SCHOLAR_HASH,
       onSuccess: msg => {
-        msg.textContent = 'Page Google Scholar bientôt disponible.';
+        msg.textContent = 'Google Scholar page coming soon.';
         msg.hidden = false;
       }
     });

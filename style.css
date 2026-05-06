@@ -94,3 +94,42 @@ section > header h2 { margin: 0; font-size: 16px; letter-spacing: .2px; text-tra
 .toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 footer { text-align: center; color: var(--muted); padding: 28px 0 0; font-size: 14px; }
+
+/* Publications description */
+.pub-desc { color: var(--text); font-size: 14px; margin: 0; }
+
+/* Password modal */
+#modal-overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, .45);
+  display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+#modal-overlay[hidden] { display: none; }
+#modal-box {
+  background: var(--panel); border-radius: var(--radius);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  padding: 24px; width: min(360px, 92vw);
+  display: flex; flex-direction: column; gap: 12px;
+}
+#modal-title { margin: 0; font-weight: 600; font-size: 15px; }
+#modal-input {
+  width: 100%; padding: 8px 10px;
+  border: 1px solid var(--border); border-radius: 8px;
+  font-size: 15px; font-family: inherit;
+}
+#modal-input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#modal-error { color: #dc2626; font-size: 14px; }
+#modal-success { font-size: 14px; color: #16a34a; }
+.modal-actions { display: flex; gap: 10px; }
+#modal-submit {
+  flex: 1; padding: 8px; background: var(--accent); color: #fff;
+  border: none; border-radius: 8px; cursor: pointer;
+  font-size: 14px; font-family: inherit;
+}
+#modal-submit:hover { opacity: .88; }
+#modal-submit:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+#modal-cancel {
+  padding: 8px 14px; border: 1px solid var(--border); background: #fff;
+  border-radius: 8px; cursor: pointer; font-size: 14px; font-family: inherit;
+}
+#modal-cancel:hover { border-color: var(--accent); background: #f0f9ff; }
+#modal-cancel:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
